@@ -1,23 +1,6 @@
 package Lesson2;
 
 public class Main {
-    public static void main(String[] args) {
-
-        String[][] arr = new String[][]{{"5", "4", "3", "7"}, {"546", "78", "562", "65"},
-                {"4", "3", "цук", "2"}, {"32", "22", "78", "23"}};
-        try {
-            method(arr);
-            System.out.println(method(arr));
-        } catch (MyArraySizeException | MyArrayDataException e) {
-            System.out.println("превышен размер массива");
-        }
-
-
-    }
-
-
-
-
 
     public static int method(String[][] arr) throws MyArraySizeException, MyArrayDataException {
         int a = 0;
@@ -40,6 +23,21 @@ public class Main {
 
         }
         return a;
+    }
+
+
+    public static void main(String[] args) {
+
+        String[][] arr = new String[][]{{"5", "4", "3", "7"}, {"546", "78", "562", "65"},
+                {"4", "3", "78", "2"}, {"цук", "22", "78", "23"}};
+        try {
+
+            System.out.println(method(arr));
+        } catch (MyArraySizeException e) {
+            System.out.println(e.getMessage());
+        } catch (MyArrayDataException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
 
